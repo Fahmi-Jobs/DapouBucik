@@ -366,6 +366,1168 @@
             color: #666;
             font-size: 0.9rem;
         }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            width: 400px;
+            max-width: 90%;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .modal-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+        
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .bluetooth-help {
+            background: #fff8e1;
+            border-left: 4px solid #ffb300;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 8px;
+        }
+        
+        .bluetooth-help h4 {
+            color: #e65100;
+            margin-bottom: 10px;
+        }
+        
+        .bluetooth-help ul {
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .bluetooth-help li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-cash-register"></i> Dapou Buck & Bucik Eatery</h1>
+            <p>Sistem Kasir dengan Dukungan Printer RPP02N</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="menu-section">
+                <h2 class="section-title"><i class="fas fa-coffee"></i> Menu</h2>
+                
+                <h3 class="category-title">Coffee</h3>
+                <div class="menu-items">
+                    <div class="menu-item" data-name="Butterscotch" data-price="15000" data-category="coffee" data-shortcut="1">
+                        <h3>Butterscotch</h3>
+                        <p>Rp 15.000</p>
+                        <div class="badge popular">Popular</div>
+                    </div>
+                    
+                    <div class="menu-item" data-name="Caramel Coffee" data-price="15000" data-category="coffee" data-shortcut="2">
+                        <h3>Caramel Coffee</h3>
+                        <p>Rp 15.000</p>
+                        <div class="badge popular">Popular</div>
+                    </div>
+                    
+                    <div class="menu-item" data-name="Aren Coffee" data-price="15000" data-category="coffee" data-shortcut="3">
+                        <h3>Aren Coffee</h3>
+                        <p>Rp 15.000</p>
+                    </div>
+                    
+                    <div class="menu-item" data-name="Hazelnut Coffee" data-price="15000" data-category="coffee" data-shortcut="4">
+                        <h3>Hazelnut Coffee</h3>
+                        <p>Rp 15.000</p>
+                    </div>
+                    
+                    <div class="menu-item" data-name="Americano" data-price="15000" data-category="coffee" data-shortcut="5">
+                        <h3>Americano</h3>
+                        <p>Rp 15.000</p>
+                    </div>
+                </div>
+                
+                <h3 class="category-title">Milk Based</h3>
+                <div class="menu-items">
+                    <div class="menu-item" data-name="Oreo" data-price="13000" data-category="milk" data-shortcut="6">
+                        <h3>Oreo</h3>
+                        <p>Rp 13.000</p>
+                    </div>
+                    
+                    <div class="menu-item" data-name="Taro" data-price="12000" data-category="milk" data-shortcut="7">
+                        <h3>Taro</h3>
+                        <p>Rp 12.000</p>
+                    </div>
+                    
+                    <div class="menu-item" data-name="Mangga" data-price="12000" data-category="milk" data-shortcut="8">
+                        <h3>Mangga</h3>
+                        <p>Rp 12.000</p>
+                    </div>
+                    
+                    <div class="menu-item" data-name="Chocolate" data-price="12000" data-category="milk" data-shortcut="9">
+                        <h3>Chocolate</h3>
+                        <p>Rp 12.000</p>
+                    </div>
+                </div>
+                
+                <h3 class="category-title">Signature Tea</h3>
+                <div class="menu-items">
+                    <div class="menu-item" data-name="Teh Es" data-price="5000" data-category="tea" data-shortcut="T">
+                        <h3>Teh Es</h3>
+                        <p>Rp 5.000</p>
+                    </div>
+                    
+                    <div class="menu-item" data-name="Lemon Tea" data-price="40000" data-category="tea" data-shortcut="L">
+                        <h3>Lemon Tea</h3>
+                        <p>Rp 40.000</p>
+                    </div>
+                    
+                    <div class="menu-item" data-name="Thai Tea" data-price="42000" data-category="tea" data-shortcut="Y">
+                        <h3>Thai Tea</h3>
+                        <p>Rp 42.000</p>
+                    </div>
+                </div>
+                
+                <h3 class="category-title">Other</h3>
+                <div class="menu-items">
+                    <div class="menu-item" data-name="Air Mineral Gelas" data-price="4000" data-category="other" data-shortcut="A">
+                        <h3>Air Mineral Gelas</h3>
+                        <p>Rp 4.000</p>
+                    </div>
+                    
+                    <div class="menu-item" data-name="Air Mineral Botol" data-price="5000" data-category="other" data-shortcut="B">
+                        <h3>Air Mineral Botol</h3>
+                        <p>Rp 5.000</p>
+                    </div>
+                </div>
+                
+                <h3 class="category-title">Makanan</h3>
+                <div class="menu-items">
+                    <div class="menu-item" data-name="Ayam Bakar Singgang" data-price="25000" data-category="food" data-shortcut="F1">
+                        <h3>Ayam Bakar Singgang</h3>
+                        <p>Rp 25.000</p>
+                        <div class="badge popular">Popular</div>
+                    </div>
+                    
+                    <div class="menu-item" data-name="Ayam Kremes" data-price="23000" data-category="food" data-shortcut="F2">
+                        <h3>Ayam Kremes</h3>
+                        <p>Rp 23.000</p>
+                    </div>
+                    
+                    <div class="menu-item" data-name="Sate Ayam" data-price="23000" data-category="food" data-shortcut="F3">
+                        <h3>Sate Ayam</h3>
+                        <p>Rp 23.000</p>
+                    </div>
+                    
+                    <div class="menu-item" data-name="Hati Ampela" data-price="13000" data-category="food" data-shortcut="F4">
+                        <h3>Hati Ampela</h3>
+                        <p>Rp 13.000</p>
+                    </div>
+                    
+                    <div class="menu-item" data-name="Jengkol/Petal Teri" data-price="20000" data-category="food" data-shortcut="F5">
+                        <h3>Jengkol/Petal Teri</h3>
+                        <p>Rp 20.000</p>
+                    </div>
+                    
+                    <div class="menu-item" data-name="Lele Goreng" data-price="20000" data-category="food" data-shortcut="F6">
+                        <h3>Lele Goreng</h3>
+                        <p>Rp 20.000</p>
+                    </div>
+                    
+                    <div class="menu-item" data-name="Telur Dadar Kribo" data-price="17000" data-category="food" data-shortcut="F7">
+                        <h3>Telur Dadar Kribo</h3>
+                        <p>Rp 17.000</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="order-section">
+                <h2 class="section-title"><i class="fas fa-shopping-cart"></i> Pesanan</h2>
+                
+                <div class="order-items" id="order-items">
+                    <div style="text-align: center; padding: 30px; color: #888;">
+                        <i class="fas fa-shopping-cart" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                        <p>Belum ada pesanan</p>
+                    </div>
+                </div>
+                
+                <div class="order-summary">
+                    <div class="summary-item">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">Rp 0</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Pajak (10%):</span>
+                        <span id="tax">Rp 0</span>
+                    </div>
+                    <div class="summary-item total">
+                        <span>Total:</span>
+                        <span id="total">Rp 0</span>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-secondary" id="clear-btn">
+                        <i class="fas fa-trash"></i> Kosongkan
+                    </button>
+                    <button class="btn btn-primary" id="checkout-btn">
+                        <i class="fas fa-cash-register"></i> Bayar & Cetak
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="printer-section">
+            <h2 class="section-title"><i class="fas fa-print"></i> Printer RPP02N</h2>
+            
+            <div class="printer-controls">
+                <button class="btn btn-primary" id="connect-printer">
+                    <i class="fas fa-bluetooth"></i> Sambungkan Printer
+                </button>
+                <button class="btn btn-secondary" id="test-print">
+                    <i class="fas fa-print"></i> Test Print
+                </button>
+            </div>
+            
+            <div class="printer-status disconnected" id="printer-status">
+                <i class="fas fa-bluetooth"></i>
+                <span>Printer belum terhubung</span>
+            </div>
+
+            <div class="bluetooth-help">
+                <h4><i class="fas fa-info-circle"></i> Cara Menghubungkan Printer RPP02N:</h4>
+                <ul>
+                    <li>Pastikan printer dalam <strong>mode pairing</strong> (LED biru berkedip)</li>
+                    <li>Buka aplikasi <strong>Bluetooth Printer</strong> terlebih dahulu</li>
+                    <li>Hubungkan printer melalui aplikasi tersebut</li>
+                    <li>Kemudian kembali ke halaman ini dan klik "Sambungkan Printer"</li>
+                    <li>Jika masih gagal, restart printer dan coba lagi</li>
+                </ul>
+                <p><strong>Catatan:</strong> Beberapa printer RPP02N perlu dipasang melalui aplikasi khusus terlebih dahulu sebelum dapat digunakan dengan browser.</p>
+            </div>
+        </div>
+        
+        <div class="shortcut-help">
+            <h4><i class="fas fa-keyboard"></i> Pintasan Keyboard</h4>
+            <div class="shortcut-item">
+                <span>Angka 1-9:</span>
+                <span class="shortcut-key">Tambah minuman</span>
+            </div>
+            <div class="shortcut-item">
+                <span>F1-F7:</span>
+                <span class="shortcut-key">Tambah makanan</span>
+            </div>
+            <div class="shortcut-item">
+                <span>Ctrl+Enter:</span>
+                <span class="shortcut-key">Bayar & Cetak</span>
+            </div>
+            <div class="shortcut-item">
+                <span>Ctrl+D:</span>
+                <span class="shortcut-key">Kosongkan pesanan</span>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2023 Dapou Buck & Bucik Eatery - Sistem Kasir dengan Printer RPP02N</p>
+        </footer>
+    </div>
+    
+    <!-- Payment Modal -->
+    <div class="modal" id="payment-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Pembayaran</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            
+            <div class="form-group">
+                <label for="total-amount">Total Amount</label>
+                <input type="text" id="total-amount" readonly>
+            </div>
+            
+            <div class="form-group">
+                <label for="payment-method">Metode Pembayaran</label>
+                <select id="payment-method">
+                    <option value="cash">Tunai</option>
+                    <option value="debit">Debit</option>
+                    <option value="credit">Kredit</option>
+                    <option value="qris">QRIS</option>
+                </select>
+            </div>
+            
+            <div class="form-group" id="cash-payment">
+                <label for="cash-amount">Jumlah Tunai</label>
+                <input type="number" id="cash-amount" placeholder="Masukkan jumlah tunai">
+            </div>
+            
+            <div class="form-group">
+                <label for="change-amount">Kembalian</label>
+                <input type="text" id="change-amount" readonly>
+            </div>
+            
+            <div class="form-actions">
+                <button class="btn btn-secondary" id="cancel-payment">Batal</button>
+                <button class="btn btn-primary" id="confirm-payment">Konfirmasi & Cetak</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notification-text">Item berhasil ditambahkan</span>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Data structures
+            let orders = [];
+            let menuItems = [];
+            let bluetoothDevice = null;
+            let bluetoothCharacteristic = null;
+            
+            // DOM elements
+            const orderItemsEl = document.getElementById('order-items');
+            const subtotalEl = document.getElementById('subtotal');
+            const taxEl = document.getElementById('tax');
+            const totalEl = document.getElementById('total');
+            const checkoutBtn = document.getElementById('checkout-btn');
+            const clearBtn = document.getElementById('clear-btn');
+            const notificationEl = document.getElementById('notification');
+            const notificationTextEl = document.getElementById('notification-text');
+            const connectPrinterBtn = document.getElementById('connect-printer');
+            const testPrintBtn = document.getElementById('test-print');
+            const printerStatus = document.getElementById('printer-status');
+            const paymentModal = document.getElementById('payment-modal');
+            const totalAmountEl = document.getElementById('total-amount');
+            const paymentMethodEl = document.getElementById('payment-method');
+            const cashAmountEl = document.getElementById('cash-amount');
+            const changeAmountEl = document.getElementById('change-amount');
+            const cancelPaymentBtn = document.getElementById('cancel-payment');
+            const confirmPaymentBtn = document.getElementById('confirm-payment');
+            const closeModalBtn = document.querySelector('.close-modal');
+            
+            // Initialize menu items
+            document.querySelectorAll('.menu-item').forEach(item => {
+                const menuItem = {
+                    name: item.getAttribute('data-name'),
+                    price: parseInt(item.getAttribute('data-price')),
+                    category: item.getAttribute('data-category'),
+                    shortcut: item.getAttribute('data-shortcut')
+                };
+                menuItems.push(menuItem);
+                
+                // Add event listener to menu item
+                item.addEventListener('click', () => {
+                    addToOrder(menuItem);
+                });
+            });
+            
+            // Event listeners
+            checkoutBtn.addEventListener('click', showPaymentModal);
+            clearBtn.addEventListener('click', clearOrder);
+            connectPrinterBtn.addEventListener('click', connectBluetoothPrinter);
+            testPrintBtn.addEventListener('click', testPrint);
+            cancelPaymentBtn.addEventListener('click', closePaymentModal);
+            confirmPaymentBtn.addEventListener('click', processPayment);
+            closeModalBtn.addEventListener('click', closePaymentModal);
+            paymentMethodEl.addEventListener('change', toggleCashPayment);
+            cashAmountEl.addEventListener('input', calculateChange);
+            
+            // Keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                // Ignore if typing in input field
+                if (e.target.tagName === 'INPUT') return;
+                
+                // Number keys 1-9 for drinks
+                if (e.key >= '1' && e.key <= '9') {
+                    const index = parseInt(e.key) - 1;
+                    if (index < 9) {
+                        addToOrder(menuItems[index]);
+                    }
+                }
+                
+                // Function keys F1-F7 for food
+                if (e.key >= 'F1' && e.key <= 'F7') {
+                    const foodIndex = parseInt(e.key.substring(1)) + 12; // F1 = index 13, etc.
+                    if (foodIndex < menuItems.length) {
+                        addToOrder(menuItems[foodIndex]);
+                    }
+                }
+                
+                // Letter keys for specific items
+                if (e.key === 't' || e.key === 'T') {
+                    const item = menuItems.find(m => m.shortcut === 'T');
+                    if (item) addToOrder(item);
+                }
+                
+                if (e.key === 'l' || e.key === 'L') {
+                    const item = menuItems.find(m => m.shortcut === 'L');
+                    if (item) addToOrder(item);
+                }
+                
+                // Ctrl+Enter for payment
+                if (e.ctrlKey && e.key === 'Enter') {
+                    e.preventDefault();
+                    showPaymentModal();
+                }
+                
+                // Ctrl+D for clear order
+                if (e.ctrlKey && e.key === 'd') {
+                    e.preventDefault();
+                    clearOrder();
+                }
+            });
+            
+            // Functions
+            function addToOrder(item) {
+                const existingOrderIndex = orders.findIndex(order => order.name === item.name);
+                
+                if (existingOrderIndex !== -1) {
+                    orders[existingOrderIndex].quantity += 1;
+                } else {
+                    orders.push({
+                        ...item,
+                        quantity: 1
+                    });
+                }
+                
+                updateOrderDisplay();
+                showNotification(`${item.name} ditambahkan ke pesanan`);
+            }
+            
+            function updateOrderDisplay() {
+                orderItemsEl.innerHTML = '';
+                
+                if (orders.length === 0) {
+                    orderItemsEl.innerHTML = `
+                        <div style="text-align: center; padding: 30px; color: #888;">
+                            <i class="fas fa-shopping-cart" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                            <p>Belum ada pesanan</p>
+                        </div>
+                    `;
+                } else {
+                    let subtotal = 0;
+                    
+                    orders.forEach((order, index) => {
+                        const orderItemEl = document.createElement('div');
+                        orderItemEl.className = 'order-item';
+                        
+                        const itemTotal = order.price * order.quantity;
+                        subtotal += itemTotal;
+                        
+                        orderItemEl.innerHTML = `
+                            <div class="order-item-info">
+                                <div class="order-item-name">${order.name}</div>
+                                <div class="order-item-price">Rp ${order.price.toLocaleString('id-ID')} x ${order.quantity}</div>
+                            </div>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn decrease" data-index="${index}">-</button>
+                                <span>${order.quantity}</span>
+                                <button class="quantity-btn increase" data-index="${index}">+</button>
+                                <button class="remove-btn" data-index="${index}">Hapus</button>
+                            </div>
+                        `;
+                        
+                        orderItemsEl.appendChild(orderItemEl);
+                    });
+                    
+                    // Add event listeners to quantity buttons
+                    document.querySelectorAll('.decrease').forEach(btn => {
+                        btn.addEventListener('click', (e) => {
+                            const index = parseInt(e.target.getAttribute('data-index'));
+                            if (orders[index].quantity > 1) {
+                                orders[index].quantity -= 1;
+                            } else {
+                                orders.splice(index, 1);
+                            }
+                            updateOrderDisplay();
+                        });
+                    });
+                    
+                    document.querySelectorAll('.increase').forEach(btn => {
+                        btn.addEventListener('click', (e) => {
+                            const index = parseInt(e.target.getAttribute('data-index'));
+                            orders[index].quantity += 1;
+                            updateOrderDisplay();
+                        });
+                    });
+                    
+                    document.querySelectorAll('.remove-btn').forEach(btn => {
+                        btn.addEventListener('click', (e) => {
+                            const index = parseInt(e.target.getAttribute('data-index'));
+                            orders.splice(index, 1);
+                            updateOrderDisplay();
+                        });
+                    });
+                    
+                    // Calculate totals
+                    const tax = Math.round(subtotal * 0.1);
+                    const total = subtotal + tax;
+                    
+                    // Update display
+                    subtotalEl.textContent = `Rp ${subtotal.toLocaleString('id-ID')}`;
+                    taxEl.textContent = `Rp ${tax.toLocaleString('id-ID')}`;
+                    totalEl.textContent = `Rp ${total.toLocaleString('id-ID')}`;
+                }
+            }
+            
+            function clearOrder() {
+                if (orders.length === 0) {
+                    showNotification('Tidak ada pesanan untuk dikosongkan');
+                    return;
+                }
+                
+                if (confirm('Apakah Anda yakin ingin mengosongkan pesanan?')) {
+                    orders = [];
+                    updateOrderDisplay();
+                    showNotification('Pesanan dikosongkan');
+                }
+            }
+            
+            function showNotification(message) {
+                notificationTextEl.textContent = message;
+                notificationEl.classList.add('show');
+                
+                setTimeout(() => {
+                    notificationEl.classList.remove('show');
+                }, 3000);
+            }
+            
+            function showPaymentModal() {
+                if (orders.length === 0) {
+                    showNotification('Tidak ada pesanan untuk diproses');
+                    return;
+                }
+                
+                const total = parseFloat(totalEl.textContent.replace('Rp ', '').replace(/\./g, ''));
+                totalAmountEl.value = `Rp ${total.toLocaleString('id-ID')}`;
+                cashAmountEl.value = '';
+                changeAmountEl.value = '';
+                paymentMethodEl.value = 'cash';
+                toggleCashPayment();
+                
+                paymentModal.style.display = 'flex';
+            }
+            
+            function closePaymentModal() {
+                paymentModal.style.display = 'none';
+            }
+            
+            function toggleCashPayment() {
+                const method = paymentMethodEl.value;
+                document.getElementById('cash-payment').style.display = method === 'cash' ? 'block' : 'none';
+            }
+            
+            function calculateChange() {
+                const total = parseFloat(totalAmountEl.value.replace('Rp ', '').replace(/\./g, ''));
+                const cashAmount = parseFloat(cashAmountEl.value) || 0;
+                
+                if (cashAmount >= total) {
+                    const change = cashAmount - total;
+                    changeAmountEl.value = `Rp ${change.toLocaleString('id-ID')}`;
+                } else {
+                    changeAmountEl.value = 'Uang tidak cukup';
+                }
+            }
+            
+            async function processPayment() {
+                const method = paymentMethodEl.value;
+                
+                if (method === 'cash') {
+                    const cashAmount = parseFloat(cashAmountEl.value) || 0;
+                    const total = parseFloat(totalAmountEl.value.replace('Rp ', '').replace(/\./g, ''));
+                    
+                    if (cashAmount < total) {
+                        showNotification('Jumlah tunai tidak cukup');
+                        return;
+                    }
+                }
+                
+                // Calculate total
+                const subtotal = parseFloat(subtotalEl.textContent.replace('Rp ', '').replace(/\./g, ''));
+                const tax = parseFloat(taxEl.textContent.replace('Rp ', '').replace(/\./g, ''));
+                const total = parseFloat(totalEl.textContent.replace('Rp ', '').replace(/\./g, ''));
+                
+                // Save transaction
+                const transaction = {
+                    id: Date.now(),
+                    date: new Date().toISOString(),
+                    orders: [...orders],
+                    subtotal: subtotal,
+                    tax: tax,
+                    total: total,
+                    paymentMethod: method
+                };
+                
+                // Save to localStorage
+                const transactions = JSON.parse(localStorage.getItem('transactions') || '[]');
+                transactions.push(transaction);
+                localStorage.setItem('transactions', JSON.stringify(transactions));
+                
+                // Print receipt
+                await printReceipt(transaction);
+                
+                // Reset order
+                orders = [];
+                updateOrderDisplay();
+                closePaymentModal();
+                
+                showNotification('Pembayaran berhasil diproses!');
+            }
+            
+            async function connectBluetoothPrinter() {
+                try {
+                    showNotification('Menyambungkan ke printer RPP02N...');
+                    
+                    // Check if Bluetooth is available
+                    if (!navigator.bluetooth) {
+                        throw new Error('Browser tidak mendukung Bluetooth. Pastikan menggunakan browser yang kompatibel seperti Chrome atau Edge.');
+                    }
+                    
+                    // Request Bluetooth device with service UUID for serial printers
+                    const device = await navigator.bluetooth.requestDevice({
+                        filters: [
+                            { services: ['00001101-0000-1000-8000-00805f9b34fb'] } // Standard Serial Profile
+                        ],
+                        optionalServices: ['generic_access']
+                    });
+                    
+                    bluetoothDevice = device;
+                    
+                    // Update UI
+                    printerStatus.className = 'printer-status connected';
+                    printerStatus.innerHTML = `<i class="fas fa-bluetooth"></i> Terhubung ke: ${device.name}`;
+                    
+                    showNotification(`Terhubung ke ${device.name}`);
+                    
+                    // Connect to the GATT Server
+                    const server = await device.gatt.connect();
+                    
+                    // Get the service we need
+                    const service = await server.getPrimaryService('00001101-0000-1000-8000-00805f9b34fb');
+                    
+                    // Get the characteristic for writing data
+                    bluetoothCharacteristic = await service.getCharacteristic('00001101-0000-1000-8000-00805f9b34fb');
+                    
+                    // Handle disconnection
+                    device.addEventListener('gattserverdisconnected', onDisconnected);
+                    
+                } catch (error) {
+                    console.error('Bluetooth error:', error);
+                    if (error.name === 'NotFoundError') {
+                        showNotification('Printer tidak ditemukan. Pastikan printer dalam mode pairing dan sudah terhubung melalui aplikasi Bluetooth Printer terlebih dahulu.');
+                    } else if (error.name === 'SecurityError') {
+                        showNotification('Error keamanan. Pastikan halaman diakses melalui HTTPS atau localhost.');
+                    } else {
+                        showNotification(`Error: ${error.message}`);
+                    }
+                }
+            }
+            
+            function onDisconnected() {
+                printerStatus.className = 'printer-status disconnected';
+                printerStatus.innerHTML = '<i class="fas fa-bluetooth"></i> Printer terputus';
+                bluetoothDevice = null;
+                bluetoothCharacteristic = null;
+                showNotification('Printer terputus');
+            }
+            
+            async function testPrint() {
+                if (!bluetoothCharacteristic) {
+                    showNotification('Silakan sambungkan printer terlebih dahulu');
+                    return;
+                }
+                
+                try {
+                    // Test receipt content with ESC/POS commands
+                    const testReceipt = `\x1B\x40`; // Initialize printer
+                    testReceipt += `\x1B\x21\x30`; // Larger text
+                    testReceipt += `TEST PRINT\n`;
+                    testReceipt += `\x1B\x21\x00`; // Normal text
+                    testReceipt += `==============================\n`;
+                    testReceipt += `Printer RPP02N\n`;
+                    testReceipt += `Dapou Buck & Bucik Eatery\n`;
+                    testReceipt += `${new Date().toLocaleString('id-ID')}\n`;
+                    testReceipt += `==============================\n`;
+                    testReceipt += `Ini adalah test print\n`;
+                    testReceipt += `untuk memastikan printer\n`;
+                    testReceipt += `bekerja dengan baik.\n`;
+                    testReceipt += `\n\n\n\n\x1B\x69`; // Cut paper
+                    
+                    // Send to printer
+                    const encoder = new TextEncoder();
+                    const data = encoder.encode(testReceipt);
+                    
+                    // Split data into chunks of max 20 bytes (BLE limitation)
+                    const chunkSize = 20;
+                    for (let i = 0; i < data.length; i += chunkSize) {
+                        const chunk = data.slice(i, i + chunkSize);
+                        await bluetoothCharacteristic.writeValue(chunk);
+                        await new Promise(resolve => setTimeout(resolve, 20));
+                    }
+                    
+                    showNotification('Test print berhasil dikirim');
+                } catch (error) {
+                    console.error('Print error:', error);
+                    showNotification(`Error print: ${error.message}`);
+                }
+            }
+            
+            async function printReceipt(transaction) {
+                // Generate receipt text with ESC/POS commands
+                let receiptText = `\x1B\x40`; // Initialize printer
+                receiptText += `\x1B\x21\x30`; // Larger text
+                receiptText += `DAPOU BUCK & BUCIK EATERY\n`;
+                receiptText += `\x1B\x21\x00`; // Normal text
+                receiptText += `==============================\n`;
+                receiptText += `Tanggal: ${new Date(transaction.date).toLocaleString('id-ID')}\n`;
+                receiptText += `Metode: ${transaction.paymentMethod}\n`;
+                receiptText += `==============================\n`;
+                
+                transaction.orders.forEach(order => {
+                    const line = `${order.name} x${order.quantity}`;
+                    const price = `Rp ${(order.price * order.quantity).toLocaleString('id-ID')}`;
+                    receiptText += `${line}\n`;
+                    receiptText += `${price}\n`;
+                });
+                
+                receiptText += `==============================\n`;
+                receiptText += `Subtotal: Rp ${transaction.subtotal.toLocaleString('id-ID')}\n`;
+                receiptText += `Pajak: Rp ${transaction.tax.toLocaleString('id-ID')}\n`;
+                receiptText += `TOTAL: Rp ${transaction.total.toLocaleString('id-ID')}\n`;
+                
+                if (transaction.paymentMethod === 'cash') {
+                    const cashAmount = parseFloat(cashAmountEl.value) || 0;
+                    const change = cashAmount - transaction.total;
+                    receiptText += `Tunai: Rp ${cashAmount.toLocaleString('id-ID')}\n`;
+                    receiptText += `Kembali: Rp ${change.toLocaleString('id-ID')}\n`;
+                }
+                
+                receiptText += `==============================\n`;
+                receiptText += `Terima kasih atas kunjungan Anda!\n`;
+                receiptText += `\n\n\n\n\x1B\x69`; // Cut paper
+                
+                // Print via Bluetooth if connected
+                if (bluetoothCharacteristic) {
+                    try {
+                        const encoder = new TextEncoder();
+                        const data = encoder.encode(receiptText);
+                        
+                        // Split data into chunks of max 20 bytes (BLE limitation)
+                        const chunkSize = 20;
+                        for (let i = 0; i < data.length; i += chunkSize) {
+                            const chunk = data.slice(i, i + chunkSize);
+                            await bluetoothCharacteristic.writeValue(chunk);
+                            await new Promise(resolve => setTimeout(resolve, 20));
+                        }
+                        
+                        showNotification('Struk berhasil dicetak');
+                    } catch (error) {
+                        console.error('Print error:', error);
+                        // Fallback to alert if printing fails
+                        alert(`Print gagal: ${error.message}\n\nStruk:\n${receiptText.replace(/\x1B\[[0-9;]*m/g, '')}`);
+                    }
+                } else {
+                    // Fallback to alert if no Bluetooth printer
+                    alert(`STRUK PEMBAYARAN\n\n${receiptText.replace(/\x1B\[[0-9;]*m/g, '')}`);
+                }
+            }
+            
+            // Initialize
+            updateOrderDisplay();
+        });
+    </script>
+</body>
+</html>            margin: 0 auto;
+        }
+        
+        header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        
+        @media (max-width: 900px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .menu-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .section-title {
+            color: var(--primary);
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .category-title {
+            color: var(--secondary);
+            margin: 20px 0 15px;
+            font-size: 1.2rem;
+            padding-left: 10px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .menu-item {
+            background: linear-gradient(to bottom, #ffffff 0%, var(--light) 100%);
+            border-radius: 12px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+            position: relative;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent);
+        }
+        
+        .menu-item h3 {
+            font-size: 1rem;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+        
+        .menu-item p {
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 4px 8px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .badge.popular {
+            background: var(--success);
+            color: white;
+        }
+        
+        .order-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .order-items {
+            margin-top: 20px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .order-item-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            flex-grow: 1;
+        }
+        
+        .order-item-name {
+            font-weight: 600;
+        }
+        
+        .order-item-price {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+        
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .quantity-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        
+        .quantity-btn:hover {
+            background-color: var(--secondary);
+        }
+        
+        .remove-btn {
+            background-color: var(--danger);
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        
+        .order-summary {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid var(--accent);
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+        
+        .total {
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: var(--primary);
+            border-top: 2px dashed var(--accent);
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .btn {
+            flex: 1;
+            padding: 15px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, var(--success), #2ecc71);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(39, 174, 96, 0.3);
+        }
+        
+        .btn-secondary {
+            background: var(--light);
+            color: var(--dark);
+            border: 1px solid #ddd;
+        }
+        
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+        
+        .printer-section {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .printer-controls {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .printer-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+        
+        .printer-status.connected {
+            background: rgba(39, 174, 96, 0.2);
+            color: var(--success);
+        }
+        
+        .printer-status.disconnected {
+            background: rgba(231, 76, 60, 0.2);
+            color: var(--danger);
+        }
+        
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            background-color: var(--success);
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transform: translateX(100%);
+            transition: transform 0.3s;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .shortcut-help {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            font-size: 0.9rem;
+        }
+        
+        .shortcut-help h4 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .shortcut-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        
+        .shortcut-key {
+            background: var(--light);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 25px;
+            color: #666;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
